@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Film, Trophy, GraduationCap, Award, Video, X, Globe, Heart } from 'lucide-react';
+import { Film, Trophy, GraduationCap, Video, X, Globe, Code , Github } from 'lucide-react';
 import './styles/Portfolio.css';
 
 const Portfolio = () => {
@@ -10,6 +10,7 @@ const Portfolio = () => {
     school: "Springdales School, Pusa Road",
     grade: "12th Grade",
     bio: "A highly motivated and academically accomplished student with excellence in academics and filmmaking, securing top positions in national competitions and maintaining outstanding academic performance."
+    
   };
 
   const filmProjects = [
@@ -36,6 +37,32 @@ const Portfolio = () => {
       thumbnail: "/images/manthan.png",  // Consider changing this to a unique thumbnail
       videoLink: "https://www.youtube.com/watch?v=7LoRyZpe1yg",
       type: "youtube"
+    }
+  ];
+
+
+  const academicProjects = [
+    {
+      title: "Cracking the Sleep Code - Somnous Quaestio",
+      award: "Special Mention - Shri R.S. Niamat Rai Rajpal Memorial Contest",
+      description: "Developed a program that estimates the likelihood of various sleep-related illnesses based on user input parameters.",
+      technologies: ["Python", "Data Analysis", "Machine Learning"],
+      highlights: [
+        "Analyzed multiple sleep parameters including hours of sleep and sleep latency",
+        "Built predictive model for sleep disorder assessment",
+        "Implemented user-friendly input interface"
+      ],
+      thumbnail: "/images/ronith-project.jpeg",
+      year: "2023",
+      github: "https://github.com/ronith256/sleep-code"
+    },
+    {
+      title: "More Projects Coming Soon",
+      description: "Exciting new projects in development. Stay tuned!",
+      technologies: ["Coming Soon"],
+      thumbnail: "/images/coming-soon.jpg",
+      year: "2024",
+      isPlaceholder: true
     }
   ];
 
@@ -98,6 +125,9 @@ const Portfolio = () => {
     }
   ];
 
+
+
+
   // Function to extract YouTube video ID
   const getYoutubeEmbedUrl = (url) => {
     const videoId = url.split('watch?v=')[1];
@@ -123,11 +153,20 @@ const Portfolio = () => {
     setSelectedVideo({ ...video, embedUrl });
   };
 
+  
+
   return (
     <div className="portfolio">
       {/* Header */}
       <header className="header">
         <div className="header-content">
+          <div className="profile-image-wrapper">
+            <img 
+              src="/images/10th-class-top.jpeg" 
+              alt={personalInfo.name}
+              className="profile-image"
+            />
+          </div>
           <div className="header-text">
             <h1>{personalInfo.name}</h1>
             <h2>{personalInfo.school}</h2>
@@ -207,6 +246,77 @@ const Portfolio = () => {
           ))}
         </div>
       </section>
+
+{/* Academic Projects Section */}
+<section className="section">
+  <div className="section-title">
+    <Code size={24} />
+    <h2>Academic Projects</h2>
+    <a 
+      href="https://github.com/ronith256" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      className="github-profile-link"
+    >
+      <Github size={20} />
+      <span>View GitHub Profile</span>
+    </a>
+  </div>
+  <div className="projects-grid">
+    {academicProjects.map((project, index) => (
+      <div key={index} className={`project-card ${project.isPlaceholder ? 'placeholder' : ''}`}>
+        <div className="project-header">
+          <img 
+            src={project.thumbnail} 
+            alt={project.title}
+            className="project-image"
+          />
+          <div className="project-overlay">
+            <span className="project-year">{project.year}</span>
+          </div>
+        </div>
+        <div className="project-content">
+          <h3 className="project-title">{project.title}</h3>
+          {project.award && !project.isPlaceholder && (
+            <p className="project-award">{project.award}</p>
+          )}
+          <p className="project-description">{project.description}</p>
+          
+          <div className="project-technologies">
+            {project.technologies.map((tech, i) => (
+              <span key={i} className="tech-tag">{tech}</span>
+            ))}
+          </div>
+          
+          {!project.isPlaceholder && (
+            <>
+              <div className="project-highlights">
+                <h4>Key Highlights</h4>
+                <ul>
+                  {project.highlights?.map((highlight, i) => (
+                    <li key={i}>{highlight}</li>
+                  ))}
+                </ul>
+              </div>
+              {project.github && (
+                <a 
+                  href={project.github} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="github-link"
+                >
+                  <Github size={16} />
+                  <span>View on GitHub</span>
+                </a>
+              )}
+            </>
+          )}
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
+
 
       {/* International Experience */}
       <section className="section">
