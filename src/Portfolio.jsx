@@ -54,7 +54,7 @@ const Portfolio = () => {
       ],
       thumbnail: "/images/ronith-project.jpeg",
       year: "2023",
-      github: "https://github.com/ronith256/sleep-code"
+      github: "https://github.com/ronith-engineer/Somnous-Quaestio"
     },
     {
       title: "More Projects Coming Soon",
@@ -253,7 +253,7 @@ const Portfolio = () => {
     <Code size={24} />
     <h2>Academic Projects</h2>
     <a 
-      href="https://github.com/ronith256" 
+      href="https://github.com/ronith-engineer" 
       target="_blank" 
       rel="noopener noreferrer"
       className="github-profile-link"
