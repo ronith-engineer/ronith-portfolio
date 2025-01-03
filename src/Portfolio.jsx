@@ -60,7 +60,7 @@ const Portfolio = () => {
       title: "More Projects Coming Soon",
       description: "Exciting new projects in development. Stay tuned!",
       technologies: ["Coming Soon"],
-      thumbnail: "/images/coming-soon.jpg",
+      thumbnail: "/images/coming-soon.avif",
       year: "2024",
       isPlaceholder: true
     }
