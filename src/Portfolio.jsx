@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Film, Trophy, GraduationCap, Video, X, Globe, Code , Github } from 'lucide-react';
+import { Film, Trophy, GraduationCap, Video, X, Globe, Code, Github,Download } from 'lucide-react';
 import './styles/Portfolio.css';
 
 const Portfolio = () => {
@@ -9,15 +9,25 @@ const Portfolio = () => {
     name: "Ronith Kartikeyan",
     school: "Springdales School, Pusa Road",
     grade: "12th Grade",
-    bio: "A highly motivated and academically accomplished student with excellence in academics and filmmaking, securing top positions in national competitions and maintaining outstanding academic performance."
-    
+    bio: [
+      "🎓 Aspiring Electrical Engineer with deep passion for Physics and Mathematics",
+      "🎥 National award-winning filmmaker",
+      "🔬 Active participant in STEM competitions and leadership roles",
+      "🌟 Balancing academics, creativity, and innovation"
+    ]
   };
 
   const filmProjects = [
     {
       title: "Inclusive Learning",
       award: "All India Second Position - TGELF 2022",
-      description: "A film about a student overcoming dyslexia with family support",
+      keyPoints: [
+        "Led scripting and direction",
+        "Managed 4-member team",
+        "Overcame production challenges",
+        "National recognition"
+      ],
+      description: "A film highlighting the journey of overcoming learning challenges through determination and support",
       thumbnail: "/images/tgel-2022.jpeg",
       videoLink: "https://drive.google.com/file/d/1a_vI_E_L-k7baw-zRDXlGCDcrN68zsSR/view",
       type: "drive"
@@ -25,32 +35,44 @@ const Portfolio = () => {
     {
       title: "Virtual Tour of Kumbalgarh Fort",
       award: "Best Cinematography Award - INTACH's Filmit India Project",
-      description: "Cinematic exploration of historic architecture",
+      keyPoints: [
+        "Historical documentation",
+        "Advanced cinematography",
+        "Green screen techniques",
+        "Heritage preservation"
+      ],
+      description: "Cinematic exploration of historic architecture and cultural heritage",
       thumbnail: "/images/kumbalgarh.jpeg",
       videoLink: "https://drive.google.com/file/d/1V-wqgpxoPJS6WWUd-q6k9mVa2M8n01ps/view",
       type: "drive"
     },
     {
-      title: "Manthan | A Short film on Social Media and LGBTQ ",
-      award: "Personal Video Film",
-      description: "LGBTQ",
-      thumbnail: "/images/manthan.png",  // Consider changing this to a unique thumbnail
+      title: "Manthan | Social Media & LGBTQ",
+      award: "TGELF Reel to Real 2023 – Social Breakthrough Theme",
+      keyPoints: [
+        "Lead role performance",
+        "Social impact focus",
+        "Advanced editing",
+        "Narrative storytelling"
+      ],
+      description: "A powerful exploration of social media's impact on identity and relationships",
+      thumbnail: "/images/manthan.png",
       videoLink: "https://www.youtube.com/watch?v=7LoRyZpe1yg",
       type: "youtube"
     }
   ];
 
-
   const academicProjects = [
     {
       title: "Cracking the Sleep Code - Somnous Quaestio",
       award: "Special Mention - Shri R.S. Niamat Rai Rajpal Memorial Contest",
-      description: "Developed a program that estimates the likelihood of various sleep-related illnesses based on user input parameters.",
+      description: "An innovative program analyzing sleep patterns and predicting potential disorders",
       technologies: ["Python", "Data Analysis", "Machine Learning"],
-      highlights: [
-        "Analyzed multiple sleep parameters including hours of sleep and sleep latency",
-        "Built predictive model for sleep disorder assessment",
-        "Implemented user-friendly input interface"
+      keyPoints: [
+        "Sleep pattern analysis",
+        "Predictive modeling",
+        "User-friendly interface",
+        "Research methodology"
       ],
       thumbnail: "/images/ronith-project.jpeg",
       year: "2023",
@@ -68,19 +90,39 @@ const Portfolio = () => {
 
   const achievements = [
     {
-      title: "School Boys Topper & Science Topper",
+      title: "Academic Excellence",
       event: "66th Annual Award Ceremony",
-      description: "Received multiple awards including Lalita Khare Memorial Trophy",
+      keyPoints: [
+        "School Boys Topper",
+        "Science Stream Topper",
+        "Multiple Awards",
+        "Academic Leadership"
+      ],
+      description: "Recognized for outstanding academic performance and leadership qualities",
       image: "/images/10th-class-top.jpeg"
     },
     {
       title: "AK Saha Quiz Competition",
-      description: "Finalist in the Science Quiz Competition",
+      event: "Science Quiz Finalist",
+      keyPoints: [
+        "Advanced to Finals",
+        "Complex Problem Solving",
+        "Team Leadership",
+        "Live Competition"
+      ],
+      description: "Led team through competitive science quiz, demonstrating knowledge and teamwork",
       image: "/images/ak-saha.jpeg"
     },
     {
       title: "Teaching Excellence",
-      description: "Chemistry Teacher for Class XI and Supervisor for Class X",
+      event: "Teachers' Day Leadership",
+      keyPoints: [
+        "Chemistry Teacher XI-B",
+        "Class X Supervisor",
+        "Effective Management",
+        "Student Mentorship"
+      ],
+      description: "Demonstrated leadership through classroom management and student engagement",
       image: "/images/teacher.jpeg"
     }
   ];
@@ -113,22 +155,57 @@ const Portfolio = () => {
       title: "Glass Exhibition Fair",
       location: "Shanghai, China",
       year: "2023",
-      description: "Understanding glass processing machinery and operations",
-      image: "/images/shanghai.jpg"
+      keyPoints: [
+        "Industrial Exposure",
+        "Technical Knowledge",
+        "Global Perspective",
+        "Hands-on Learning"
+      ],
+      description: "Gained insights into glass processing machinery and international operations",
+      image: "https://placehold.co/600x400/e2e8f0/475569?text=Glass+Exhibition+Fair+Shanghai"
     },
     {
       title: "Digitales PASCH-Jugendcamp",
       location: "Goethe Institute",
       year: "2022",
-      description: "International German language workshop",
-      image: "/images/goethe.jpg"
+      keyPoints: [
+        "German Language",
+        "Cultural Exchange",
+        "Interactive Learning",
+        "Global Network"
+      ],
+      description: "Selected for prestigious German language program, enhancing language and cultural skills",
+      image: "https://placehold.co/600x400/0099d1/ffffff?text=Goethe+Institute"
+    },
+    {
+      title: "LADLI Foundation Trust Internship",
+      location: "Delhi, India",
+      year: "2023",
+      keyPoints: [
+        "Social Awareness",
+        "Community Engagement",
+        "Content Creation",
+        "Public Health Education"
+      ],
+      highlights: [
+        "Led school seminars",
+        "Created educational articles",
+        "Social media campaigns",
+        "Public health initiatives"
+      ],
+      duration: "3 months",
+      focusAreas: [
+        "Menstrual hygiene",
+        "Malnutrition awareness",
+        "Child safety education",
+        "WASH program implementation"
+      ],
+      description: "Led comprehensive social awareness campaigns through school seminars, article writing, and social media outreach, focusing on critical public health and social issues.",
+      image: "/images/ladli-foundation.png"  
     }
   ];
 
-
-
-
-  // Function to extract YouTube video ID
+  // Video handling functions
   const getYoutubeEmbedUrl = (url) => {
     const videoId = url.split('watch?v=')[1];
     if (videoId) {
@@ -137,7 +214,6 @@ const Portfolio = () => {
     return url;
   };
 
-  // Function to convert Google Drive view URL to embed URL
   const getDriveEmbedUrl = (url) => {
     const fileId = url.split('/d/')[1]?.split('/')[0];
     if (fileId) {
@@ -153,27 +229,41 @@ const Portfolio = () => {
     setSelectedVideo({ ...video, embedUrl });
   };
 
-  
-
   return (
     <div className="portfolio">
       {/* Header */}
       <header className="header">
-        <div className="header-content">
-          <div className="profile-image-wrapper">
-            <img 
-              src="/images/10th-class-top.jpeg" 
-              alt={personalInfo.name}
-              className="profile-image"
-            />
-          </div>
-          <div className="header-text">
-            <h1>{personalInfo.name}</h1>
-            <h2>{personalInfo.school}</h2>
-            <p className="bio">{personalInfo.bio}</p>
-          </div>
+  <div className="header-content">
+    <div className="profile-image-wrapper">
+      <img 
+        src="/images/ronith-profile.jpg" 
+        alt={personalInfo.name}
+        className="profile-image"
+      />
+    </div>
+    <div className="header-text">
+      <div className="header-top">
+        <div>
+          <h1>{personalInfo.name}</h1>
+          <h2>{personalInfo.school}</h2>
         </div>
-      </header>
+        <a 
+          href="/Ronith-Kartikeyan-CV.pdf" 
+          download="Ronith_Kartikeyan_CV.pdf"
+          className="download-cv-btn"
+        >
+          <Download size={18} />
+          Download CV
+        </a>
+      </div>
+      <div className="bio-tags">
+        {personalInfo.bio.map((point, index) => (
+          <span key={index} className="bio-tag">{point}</span>
+        ))}
+      </div>
+    </div>
+  </div>
+</header>
 
       {/* Academic Excellence */}
       <section className="section">
@@ -214,14 +304,19 @@ const Portfolio = () => {
               <div className="card-content">
                 <h3>{project.title}</h3>
                 <p className="award">{project.award}</p>
-                <p>{project.description}</p>
+                <p className="description">{project.description}</p>
+                <div className="key-points">
+                  {project.keyPoints.map((point, i) => (
+                    <span key={i} className="key-tag">{point}</span>
+                  ))}
+                </div>
               </div>
             </div>
           ))}
         </div>
       </section>
 
-      {/* Achievements Gallery */}
+      {/* Achievements Section */}
       <section className="section">
         <div className="section-title">
           <Trophy size={24} />
@@ -237,86 +332,84 @@ const Portfolio = () => {
               />
               <div className="gallery-content">
                 <h3>{achievement.title}</h3>
-                {achievement.event && (
-                  <p className="event">{achievement.event}</p>
-                )}
-                <p>{achievement.description}</p>
+                <p className="event">{achievement.event}</p>
+                <p className="description">{achievement.description}</p>
+                <div className="key-points">
+                  {achievement.keyPoints.map((point, i) => (
+                    <span key={i} className="key-tag">{point}</span>
+                  ))}
+                </div>
               </div>
             </div>
           ))}
         </div>
       </section>
 
-{/* Academic Projects Section */}
-<section className="section">
-  <div className="section-title">
-    <Code size={24} />
-    <h2>Academic Projects</h2>
-    <a 
-      href="https://github.com/ronith-engineer" 
-      target="_blank" 
-      rel="noopener noreferrer"
-      className="github-profile-link"
-    >
-      <Github size={20} />
-      <span>View GitHub Profile</span>
-    </a>
-  </div>
-  <div className="projects-grid">
-    {academicProjects.map((project, index) => (
-      <div key={index} className={`project-card ${project.isPlaceholder ? 'placeholder' : ''}`}>
-        <div className="project-header">
-          <img 
-            src={project.thumbnail} 
-            alt={project.title}
-            className="project-image"
-          />
-          <div className="project-overlay">
-            <span className="project-year">{project.year}</span>
-          </div>
+      {/* Academic Projects */}
+      <section className="section">
+        <div className="section-title">
+          <Code size={24} />
+          <h2>Academic Projects</h2>
+          <a 
+            href="https://github.com/ronith-engineer" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="github-profile-link"
+          >
+            <Github size={20} />
+            <span>View GitHub Profile</span>
+          </a>
         </div>
-        <div className="project-content">
-          <h3 className="project-title">{project.title}</h3>
-          {project.award && !project.isPlaceholder && (
-            <p className="project-award">{project.award}</p>
-          )}
-          <p className="project-description">{project.description}</p>
-          
-          <div className="project-technologies">
-            {project.technologies.map((tech, i) => (
-              <span key={i} className="tech-tag">{tech}</span>
-            ))}
-          </div>
-          
-          {!project.isPlaceholder && (
-            <>
-              <div className="project-highlights">
-                <h4>Key Highlights</h4>
-                <ul>
-                  {project.highlights?.map((highlight, i) => (
-                    <li key={i}>{highlight}</li>
-                  ))}
-                </ul>
+        <div className="projects-grid">
+          {academicProjects.map((project, index) => (
+            <div key={index} className={`project-card ${project.isPlaceholder ? 'placeholder' : ''}`}>
+              <div className="project-header">
+                <img 
+                  src={project.thumbnail} 
+                  alt={project.title}
+                  className="project-image"
+                />
+                <div className="project-overlay">
+                  <span className="project-year">{project.year}</span>
+                </div>
               </div>
-              {project.github && (
-                <a 
-                  href={project.github} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="github-link"
-                >
-                  <Github size={16} />
-                  <span>View on GitHub</span>
-                </a>
-              )}
-            </>
-          )}
+              <div className="project-content">
+                <h3 className="project-title">{project.title}</h3>
+                {project.award && !project.isPlaceholder && (
+                  <p className="project-award">{project.award}</p>
+                )}
+                <p className="project-description">{project.description}</p>
+                
+                <div className="project-technologies">
+                  {project.technologies.map((tech, i) => (
+                    <span key={i} className="tech-tag">{tech}</span>
+                  ))}
+                </div>
+                
+                {!project.isPlaceholder && project.keyPoints && (
+                  <div className="key-points">
+                    {project.keyPoints.map((point, i) => (
+                      <span key={i} className="key-tag">{point}</span>
+                    ))}
+                  </div>
+                )}
+                
+                {project.github && (
+                  <a 
+                    href={project.github} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="github-link"
+                  >
+                    <Github size={16} />
+                    <span>View on GitHub</span>
+                  </a>
+                )}
+              </div>
+            </div>
+          ))}
         </div>
-      </div>
-    ))}
-  </div>
-</section>
-
+      </section>
 
       {/* International Experience */}
       <section className="section">
@@ -335,7 +428,12 @@ const Portfolio = () => {
               <div className="gallery-content">
                 <h3>{experience.title}</h3>
                 <p className="location">{experience.location} • {experience.year}</p>
-                <p>{experience.description}</p>
+                <p className="description">{experience.description}</p>
+                <div className="key-points">
+                  {experience.keyPoints.map((point, i) => (
+                    <span key={i} className="key-tag">{point}</span>
+                  ))}
+                </div>
               </div>
             </div>
           ))}
