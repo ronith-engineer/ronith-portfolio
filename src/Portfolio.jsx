@@ -79,11 +79,25 @@ const Portfolio = () => {
       github: "https://github.com/ronith-engineer/Somnous-Quaestio"
     },
     {
+    title: "LED Matrix Build",
+    description: "An introductory Arduino-based project to display text on an LED Matrix to wish Mother's Day.",
+    technologies: ["Arduino IDE", "Electronics"],
+    keyPoints: [
+      "Text display",
+      "Circuit wiring",
+      "Breadboard prototyping"
+    ],
+    thumbnail: "/images/led-matrix.png", // Save the uploaded image with this name
+    year: "2025",
+    github: "https://github.com/ronith-engineer/LED-Matrix-Arduino-Project.git"
+  }
+
+    {
       title: "More Projects Coming Soon",
       description: "Exciting new projects in development. Stay tuned!",
       technologies: ["Coming Soon"],
       thumbnail: "/images/coming-soon.avif",
-      year: "2024",
+      year: "2025",
       isPlaceholder: true
     }
   ];
